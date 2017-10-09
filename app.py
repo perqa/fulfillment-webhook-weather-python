@@ -116,7 +116,6 @@ if __name__ == '__main__':
     # Get the environment information we need to start the server
     ip = os.environ['OPENSHIFT_PYTHON_IP']
     port = int(os.environ['OPENSHIFT_PYTHON_PORT'])
-    host = os.environ['OPENSHIFT_GEAR_DNS']
 
     print("Starting app on port %d" % port)
 
