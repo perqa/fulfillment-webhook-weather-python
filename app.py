@@ -112,10 +112,12 @@ def makeWebhookResult(data):
         "source": "apiai-weather-webhook-sample"
     }
 
-
 if __name__ == '__main__':
-    port = int(os.getenv('PORT', 5000))
+    # Get the environment information we need to start the server
+    ip = os.environ['OPENSHIFT_PYTHON_IP']
+    port = int(os.environ['OPENSHIFT_PYTHON_PORT'])
+    host = os.environ['OPENSHIFT_GEAR_DNS']
 
     print("Starting app on port %d" % port)
 
-    app.run(debug=False, port=port, host='0.0.0.0')
+    app.run(debug=False, port=port, host=ip)
