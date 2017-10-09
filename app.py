@@ -113,10 +113,5 @@ def makeWebhookResult(data):
     }
 
 if __name__ == '__main__':
-    # Get the environment information we need to start the server
-    ip = os.environ['OPENSHIFT_PYTHON_IP']
-    port = int(os.environ['OPENSHIFT_PYTHON_PORT'])
-
-    print("Starting app on port %d" % port)
-
-    app.run(debug=False, port=port, host=ip)
+    # print("Starting app on port %d" % port)
+    app.run(debug=False, host='0.0.0.0', port=8080)
